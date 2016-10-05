@@ -3,11 +3,46 @@
     <title>
       Allowance Saver
     </title>
+    <script>
+      
+      var Money = null;
+      var hasJoined = null;
+      
+      function addOne() {
+       Money = Money + 1;
+      }
+      
+      function takeOne() {
+       Money = Money - 1; 
+      }
+      
+      function saver() {
+       localStorage.Moneystat = Money;
+       localStorage.hasJoinedstat = 1;
+      }
+      
+      function load() {
+       Money = Number(localStorage.Moneystat);
+       hasJoinedstat = Number(localStorage.hasJoinedstat);
+      }
+      
+      function startUp() {
+       if (hasJoined == null) {
+        hasJoined = 1;
+        alert('Welcome');
+       } else if (hasJoined == 1) {
+        alert('Welcome Back') 
+       }
+      }
+    </script>
     <style>
     </style>
   </head>
-  <body>
+  <body onload="startUp();setInterval( function() { load(); }, 50);setInterval( function() { save(); }, 250);">
     <p>Allowance Saver</p>
-    <p><span>Add One </span> <span> Take One</span></p>
+    <p>
+      <button onClick="addOne();">Add One</button>
+      <button onClick="takeOne();">Take One</button>
+    </p>
   </body>
 </html>

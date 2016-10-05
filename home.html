@@ -25,7 +25,7 @@
       }
       
       function load() {
-       setInterval( function() { saver(); }, 250);
+       //setInterval( function() { saver(); }, 250);
        setTimeout( function() { load(); }, 50);
        setInterval( function() { constantReloader(); });
        Money = Number(localStorage.MONEYZZ);
@@ -36,7 +36,7 @@
        if (localStorage.JOINEDZZ == null) {
         localStorage.JOINEDZZ = 1;
         localStorage.MONEYZZ = 0;
-        localStorage.setItem("payments", "");
+        //localStorage.setItem("payments", "");
         alert('Welcome');
        } else if (localStorage.JOINEDZZ == 1) {
         alert('Welcome Back');

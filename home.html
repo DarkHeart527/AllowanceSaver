@@ -25,7 +25,6 @@
       }
       
       function load() {
-       startUp();
        setInterval( function() { saver(); }, 250);
        setInterval( function() { load(); }, 50);
        Money = Number(localStorage.MONEYZZ);
@@ -46,7 +45,7 @@
     <style>
     </style>
   </head>
-  <body onload="load();">
+  <body onload="startUp();load();">
     <p>Allowance Saver</p>
     <p id="display">NaN</p>
     <p>

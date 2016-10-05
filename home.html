@@ -26,7 +26,8 @@
       
       function load() {
        setInterval( function() { saver(); }, 250);
-       setInterval( function() { load(); }, 50);
+       setTimeout( function() { load(); }, 50);
+       setInterval( function() { constantReloader(); });
        Money = Number(localStorage.MONEYZZ);
        //Number(localStorage.108134);
       }

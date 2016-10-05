@@ -9,10 +9,12 @@
       
       function addOne() {
        Money = Money + 1;
+       document.getElementById('display').innerHTML = "Money In Your Account" + Money;
       }
       
       function takeOne() {
        Money = Money - 1; 
+       document.getElementById('display').innerHTML = "Money In Your Account" + Money;
       }
       
       function saver() {
@@ -39,6 +41,7 @@
   </head>
   <body onload="startUp();setInterval( function() { load(); }, 50);setInterval( function() { saver(); }, 250);">
     <p>Allowance Saver</p>
+    <p id="display">NaN</p>
     <p>
       <button onClick="addOne();">Add One</button>
       <button onClick="takeOne();">Take One</button>

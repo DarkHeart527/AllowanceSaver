@@ -9,12 +9,10 @@
       
       function addOne() {
        Money = Money + 1;
-       document.getElementById('display').innerHTML = "Money In Your Account" + Money;
       }
       
       function takeOne() {
        Money = Money - 1; 
-       document.getElementById('display').innerHTML = "Money In Your Account" + Money;
       }
       
       function saver() {
@@ -22,7 +20,13 @@
        localStorage.JOINEDZZ = 1;
       }
       
+      function constantReloader() {
+       document.getElementById('display').innerHTML = "Money In Your Account" + Money;
+      }
+      
       function load() {
+       setInterval( function() { saver(); }, 250);
+       setInterval( function() { load(); }, 50);
        Money = Number(localStorage.MONEYZZ);
        //Number(localStorage.108134);
       }
@@ -30,6 +34,8 @@
       function startUp() {
        if (localStorage.JOINEDZZ == null) {
         localStorage.JOINEDZZ = 1;
+        localStorage.MONEYZZ = 0;
+        localStorage.setItem("payments", "");
         alert('Welcome');
        } else if (localStorage.JOINEDZZ == 1) {
         alert('Welcome Back');
@@ -39,7 +45,7 @@
     <style>
     </style>
   </head>
-  <body onload="startUp();setInterval( function() { load(); }, 50);setInterval( function() { saver(); }, 250);">
+  <body onload="startUp();">
     <p>Allowance Saver</p>
     <p id="display">NaN</p>
     <p>

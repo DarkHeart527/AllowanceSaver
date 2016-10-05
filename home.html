@@ -21,15 +21,14 @@
       }
       
       function constantReloader() {
-       document.getElementById('display').innerHTML = "Money In Your Account" + Money;
+       document.getElementById('display').innerHTML = "Money In Your Account: " + Money;
       }
       
       function load() {
-       //setInterval( function() { saver(); }, 250);
+       setInterval( function() { saver(); }, 250);
        //setTimeout( function() { load(); }, 50);
        setInterval( function() { constantReloader(); });
        Money = Number(localStorage.MONEYZZ);
-       //Number(localStorage.108134);
       }
       
       function startUp() {

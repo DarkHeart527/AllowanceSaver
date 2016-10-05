@@ -6,7 +6,6 @@
     <script>
       
       var Money = null;
-      var hasJoined = null;
       
       function addOne() {
        Money = Money + 1;
@@ -23,15 +22,15 @@
       
       function load() {
        Money = Number(localStorage.193781);
-       hasJoinedstat = Number(localStorage.108134);
+       //Number(localStorage.108134);
       }
       
       function startUp() {
-       if (hasJoined == null) {
-        hasJoined = 1;
+       if (localStorage.108134 == null) {
+        localStorage.108134 = 1;
         alert('Welcome');
-       } else if (hasJoined == 1) {
-        alert('Welcome Back') 
+       } else if (localStorage.108134 == 1) {
+        alert('Welcome Back');
        }
       }
     </script>

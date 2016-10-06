@@ -18,6 +18,7 @@
       function saver() {
        localStorage.MONEYZZ = Money;
        localStorage.JOINEDZZ = 1;
+        localStorage.setItem("payments", document.getElementById('displayArea').innerHTML);
       }
       
       function constantReloader() {
@@ -28,6 +29,7 @@
        setInterval( function() { saver(); }, 250);
        setTimeout( function() { load(); }, 50);
        setInterval( function() { constantReloader(); });
+       document.getElementById('displayArea').innerHTML = localStorage.getItem("payments");
        Money = Number(localStorage.MONEYZZ);
       }
       
@@ -51,6 +53,8 @@
     <p>
       <button onClick="addOne();">Add One</button>
       <button onClick="takeOne();">Take One</button>
+    </p>
+    <p id="displayArea">
     </p>
   </body>
 </html>

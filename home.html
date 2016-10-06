@@ -4,27 +4,21 @@
       Allowance Saver
     </title>
     <script>
-      
       var Money = null;
-      
       function addOne() {
        document.getElementById('form').innerHTML = "<form><input name='add' id='form1' placeHolder='Chore/Reason'></input><input name='pay' id='form2' placeHolder='Earn Amount'></input></form><button onClick='submitAddition()'>Submit</button>"
       }
-      
       function takeOne() {
        document.getElementById('form').innerHTML = "<form><input name='purchase' id='form1' placeHolder='The purchased item'></input><input name='cost' id='form2' placeHolder='Cost Of This'></input></form><button onClick='submitSubtraction()'>Submit</button>"
       }
-      
       function saver() {
        localStorage.MONEYZZ = Money;
        localStorage.JOINEDZZ = 1;
         localStorage.setItem("payments", document.getElementById('displayArea').innerHTML);
       }
-      
       function constantReloader() {
        document.getElementById('display').innerHTML = "Money In Your Account: " + Money;
       }
-      
       function load() {
        setInterval( function() { saver(); }, 250);
        setTimeout( function() { load(); }, 50);
@@ -32,7 +26,6 @@
        document.getElementById('displayArea').innerHTML = localStorage.getItem("payments");
        Money = Number(localStorage.MONEYZZ);
       }
-      
       function startUp() {
        if (localStorage.JOINEDZZ == null) {
         localStorage.JOINEDZZ = 1;
@@ -43,7 +36,6 @@
         alert('Welcome Back');
        }
       }
-      
       function submitSubtraction() {
        if (document.getElementById('form1').value == '') {
         alert('Missing Information');
@@ -51,7 +43,6 @@
         passSub(); 
        }
       }
-      
       function passSub() {
         if (document.getElementById('form2').value == '') {
         alert('Missing Information');
@@ -62,7 +53,6 @@
       function acceptSub() {
        alert('Success!'); 
       }
-      
       function submitAddition() {
        if (document.getElementById('form1').value == '') {
         alert('Missing Information');
@@ -70,8 +60,7 @@
         passAdd(); 
        }
       }
-      
-      function passSub() {
+      function passAdd() {
         if (document.getElementById('form2').value == '') {
         alert('Missing Information');
        } else {

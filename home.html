@@ -8,11 +8,11 @@
       var Money = null;
       
       function addOne() {
-       Money = Money + 1;
+       document.getElementById('form').innerHTML = "<form><input name='add' id='form1' placeHolder='Chore/Reason'></input><input name='pay' id='form2' placeHolder='Earn Amount'></input><button onClick='submitAddition()'>Submit</button></form>"
       }
       
       function takeOne() {
-       document.getElementById('form').innerHTML = "<form><input name='purchase' placeHolder='The purchased item'></input><input name='cost' placeHolder='Cost Of This'></input></form>"
+       document.getElementById('form').innerHTML = "<form><input name='purchase' id='form1' placeHolder='The purchased item'></input><input name='cost' id='form2' placeHolder='Cost Of This'></input><button onClick='submitSubtraction()'>Submit</button></form>"
       }
       
       function saver() {
@@ -42,6 +42,44 @@
        } else if (localStorage.JOINEDZZ == 1) {
         alert('Welcome Back');
        }
+      }
+      
+      function submitSubtraction() {
+       if (document.getElementById('form1').value == '') {
+        alert('Missing Information');
+       } else {
+        passSub(); 
+       }
+      }
+      
+      function passSub() {
+        if (document.getElementById('form2').value == '') {
+        alert('Missing Information');
+       } else {
+        acceptSub(); 
+       }
+      }
+      function acceptSub() {
+       alert('Success!'); 
+      }
+      
+      function submitAddition() {
+       if (document.getElementById('form1').value == '') {
+        alert('Missing Information');
+       } else {
+        passAdd(); 
+       }
+      }
+      
+      function passSub() {
+        if (document.getElementById('form2').value == '') {
+        alert('Missing Information');
+       } else {
+        acceptAdd(); 
+       }
+      }
+      function acceptAdd() {
+       alert('Success!'); 
       }
     </script>
     <style>

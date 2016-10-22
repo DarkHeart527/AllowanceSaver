@@ -6,6 +6,7 @@
 	  var Day = d.getDate();
 	  var Year = d.getFullYear();
 	  var dates = Month + " - " + Day + " - " + Year;
+	  var eNum = Number(localStorage.eNum);
 	  
       function addOne() {
        document.getElementById('form').innerHTML = "<form><input name='add' id='form1' placeHolder='Chore/Reason'></input><input name='pay' id='form2' type='number' min='0' max='100' placeHolder='Earn Amount'></input></form><button onClick='submitAddition()'>Submit</button>"
@@ -20,11 +21,6 @@
       }
       function constantReloader() {
        document.getElementById('display2').innerHTML = "Money In Your Account: " + Number(localStorage.MONEYZZ);
-	   if (localStorage.MONEYZZ < 0) {
-	    checkNegative = "-";
-	   } else {
-	    checkNegative = '';
-	   }
       }
       function load() {
        setInterval( function() { saver(); });
@@ -81,7 +77,7 @@
 	   //localStorage.MONEYZZ = Number(localStorage.MONEYZZ) + document.getElementById('form2').value;
 	   Money = Number(Money) + Number(document.getElementById('form2').value);
        alert('Success!'); 
-	   document.getElementById('displayArea').innerHTML = "<p>" + dates + " | " + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML;
+	   document.getElementById('displayArea').innerHTML = "<p id='" + eNum + ">" + dates + " | " + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML;
 	   document.getElementById('form').innerHTML = '';
       }
 	  

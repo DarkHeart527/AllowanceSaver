@@ -58,7 +58,7 @@
 	   //localStorage.MONEYZZ = Number(localStorage.MONEYZZ) - document.getElementById('form2').value;
 	   Money = Number(Money) - Number(document.getElementById('form2').value);
        alert('Success!'); 
-	      eNum = eNum + 1;
+	      eNumS = eNumS + 1;
 	   document.getElementById('displayArea').innerHTML = "<p id='" + eNumS + "'>" + dates + ' | ' + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNumS + "').remove() }'>Delete This Data Line</button>";
 	   document.getElementById('form').innerHTML = '';
       }

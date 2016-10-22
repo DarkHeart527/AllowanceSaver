@@ -16,7 +16,7 @@
       }
       function saver() {
        localStorage.MONEYZZ = Money;
-       localStorage.eNum = Number(eNum);
+       localStorage.eNumS = Number(eNumS);
        localStorage.JOINEDZZ = 1;
        localStorage.setItem("payments", document.getElementById('displayArea').innerHTML);
       }
@@ -33,7 +33,7 @@
        if (localStorage.JOINEDZZ == null) {
         localStorage.JOINEDZZ = 1;
         localStorage.MONEYZZ = 0;
-	localStorage.eNum = 0;
+	localStorage.eNumS = 0;
         localStorage.setItem("payments", "");
         alert('Welcome');
        } else if (localStorage.JOINEDZZ == 1) {

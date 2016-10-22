@@ -59,7 +59,7 @@
 	   Money = Number(Money) - Number(document.getElementById('form2').value);
        alert('Success!'); 
 	      eNum = eNum + 1;
-	   document.getElementById('displayArea').innerHTML = "<p>" + dates + ' | ' + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNum + "').remove()";
+	   document.getElementById('displayArea').innerHTML = "<p id='" + eNumS + "'>" + dates + ' | ' + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNumS + "').remove()";
 	   document.getElementById('form').innerHTML = '';
       }
       function submitAddition() {
@@ -80,8 +80,8 @@
 	   //localStorage.MONEYZZ = Number(localStorage.MONEYZZ) + document.getElementById('form2').value;
 	   Money = Number(Money) + Number(document.getElementById('form2').value);
        alert('Success!'); 
-	   eNum = eNum + 1;
-	   document.getElementById('displayArea').innerHTML = "<p id='" + eNum + "'>" + dates + " | " + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNum + "').remove()";
+	   eNumS = eNumS + 1;
+	   document.getElementById('displayArea').innerHTML = "<p id='" + eNumS + "'>" + dates + " | " + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNumS + "').remove()";
 	   document.getElementById('form').innerHTML = '';
       }
 	  
@@ -97,7 +97,7 @@
 	   document.getElementById('displayArea').innerHTML = '';
 	   localStorage.setItem("payments", '');
 	   localStorage.eNum = 0;
-	   enum = 0;
+	   eNumS = 0;
 	   document.getElementById('confirm').innerHTML = "";
 	   document.getElementById('resetButton').innerHTML = "<button onClick='reset()'>Reset</button>";
 	  }

@@ -6,7 +6,7 @@
 	  var Day = d.getDate();
 	  var Year = d.getFullYear();
 	  var dates = Month + " - " + Day + " - " + Year;
-	  var eNum = Number(localStorage.eNum);
+	  var eNum = null;
 	  
       function addOne() {
        document.getElementById('form').innerHTML = "<form><input name='add' id='form1' placeHolder='Chore/Reason'></input><input name='pay' id='form2' type='number' min='0' max='100' placeHolder='Earn Amount'></input></form><button onClick='submitAddition()'>Submit</button>"
@@ -16,6 +16,7 @@
       }
       function saver() {
        localStorage.MONEYZZ = Money;
+       localStorage.eNum = Number(eNum);
        localStorage.JOINEDZZ = 1;
        localStorage.setItem("payments", document.getElementById('displayArea').innerHTML);
       }
@@ -32,6 +33,7 @@
        if (localStorage.JOINEDZZ == null) {
         localStorage.JOINEDZZ = 1;
         localStorage.MONEYZZ = 0;
+	localStorage.eNum = 0;
         localStorage.setItem("payments", "");
         alert('Welcome');
        } else if (localStorage.JOINEDZZ == 1) {
@@ -56,7 +58,8 @@
 	   //localStorage.MONEYZZ = Number(localStorage.MONEYZZ) - document.getElementById('form2').value;
 	   Money = Number(Money) - Number(document.getElementById('form2').value);
        alert('Success!'); 
-	   document.getElementById('displayArea').innerHTML = "<p>" + dates + ' | ' + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML;
+	      eNum = eNum + 1;
+	   document.getElementById('displayArea').innerHTML = "<p>" + dates + ' | ' + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNum + "').remove()";
 	   document.getElementById('form').innerHTML = '';
       }
       function submitAddition() {
@@ -77,7 +80,8 @@
 	   //localStorage.MONEYZZ = Number(localStorage.MONEYZZ) + document.getElementById('form2').value;
 	   Money = Number(Money) + Number(document.getElementById('form2').value);
        alert('Success!'); 
-	   document.getElementById('displayArea').innerHTML = "<p id='" + eNum + ">" + dates + " | " + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML;
+	   eNum = eNum + 1;
+	   document.getElementById('displayArea').innerHTML = "<p id='" + eNum + "'>" + dates + " | " + document.getElementById('form1').value + " | " + document.getElementById('form2').value + document.getElementById('displayArea').innerHTML + "<button onclick=' function() { document.getElementById('" + eNum + "').remove()";
 	   document.getElementById('form').innerHTML = '';
       }
 	  
@@ -92,6 +96,8 @@
 	   localStorage.JOINEDZZ = null;
 	   document.getElementById('displayArea').innerHTML = '';
 	   localStorage.setItem("payments", '');
+	   localStorage.eNum = 0;
+	   enum = 0;
 	   document.getElementById('confirm').innerHTML = "";
 	   document.getElementById('resetButton').innerHTML = "<button onClick='reset()'>Reset</button>";
 	  }

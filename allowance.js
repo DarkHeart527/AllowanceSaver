@@ -6,7 +6,7 @@
 	  var Day = d.getDate();
 	  var Year = d.getFullYear();
 	  var dates = Month + " - " + Day + " - " + Year;
-	  var eNumS = null;
+	  var eNumS = Number(localStorage.eNumS);
 	  
       function addOne() {
        document.getElementById('form').innerHTML = "<form><input name='add' id='form1' placeHolder='Chore/Reason'></input><input name='pay' id='form2' type='number' min='0' max='100' placeHolder='Earn Amount'></input></form><button onClick='submitAddition()'>Submit</button>"
